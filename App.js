@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import Measurement from './components/Measurement';
+import Test from './components/Test';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,11 @@ function MyStack() {
         name="Measurement"
         component={Measurement}
         options={({title: 'Measurement'}, {headerLeft: null})}
+      />
+      <Stack.Screen
+        name="Test"
+        component={Test}
+        options={({title: 'Test'}, {headerLeft: null})}
       />
     </Stack.Navigator>
   );
