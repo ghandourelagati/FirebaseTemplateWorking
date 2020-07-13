@@ -3,12 +3,14 @@ import React from 'react';
 import {
   SafeAreaView,
   View,
-  FlatList,
   StyleSheet,
   Text,
   StatusBar,
   SectionList,
+  Button,
+  ToastAndroid,
 } from 'react-native';
+import firebase from '../database/firebase';
 
 const DATA = [
   {
@@ -35,18 +37,27 @@ const Item = ({title}) => (
   </View>
 );
 
-const Measurement = () => (
-  <SafeAreaView style={styles.container}>
-    <SectionList
-      sections={DATA}
-      keyExtractor={(item, index) => item + index}
-      renderItem={({item}) => <Item title={item} />}
-      renderSectionHeader={({section: {title}}) => (
-        <Text style={styles.header}>{title}</Text>
-      )}
-    />
-  </SafeAreaView>
-);
+const Measurement = () => {
+  const showToast = () => {
+    firebase.auth().signOut();
+    ToastAndroid.show('You have been signedout !', ToastAndroid.SHORT);
+  };
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Button title="Logout" onPress={() => showToast()} />
+        <SectionList
+          sections={DATA}
+          keyExtractor={(item, index) => item + index}
+          renderItem={({item}) => <Item title={item} />}
+          renderSectionHeader={({section: {title}}) => (
+            <Text style={styles.header}>{title}</Text>
+          )}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
