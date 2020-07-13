@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // App.js
 
 import * as React from 'react';

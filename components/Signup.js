@@ -21,7 +21,19 @@ export default class Signup extends Component {
       email: '',
       password: '',
       isLoading: false,
+      loggedIn: null,
     };
+  }
+
+  UNSAFE_componentWillMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({loggedIn: true});
+        this.props.navigation.navigate('Measurement');
+      } else {
+        this.setState({loggedIn: false});
+      }
+    });
   }
 
   updateInputVal = (val, prop) => {
