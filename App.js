@@ -5,6 +5,8 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import firebase from './database/firebase';
+
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
@@ -56,10 +58,23 @@ function MyStack() {
   );
 }
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
-  );
+export default class App extends React.Component {
+  UNSAFE_componentWillMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({loggedIn: true});
+        <Measurement />;
+      } else {
+        this.setState({loggedIn: false});
+      }
+    });
+  }
+
+  render() {
+    return (
+      <NavigationContainer>
+        <MyStack />
+      </NavigationContainer>
+    );
+  }
 }
