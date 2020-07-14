@@ -115,8 +115,74 @@ const DATA = [
     data: ['volume premenopausal: <18 mL', 'postmenopausal: <8 mL'],
   },
   {
-    title: 'Desserts',
-    data: ['Cheese Cake', 'Ice Cream'],
+    title: 'Paraspinal lines',
+    data: ['left: <10 mm wide', 'right: <3 mm wide'],
+  },
+  {
+    title: 'Paratracheal stripe',
+    data: ['<5 mm'],
+  },
+  {
+    title: 'Pancreatic duct',
+    data: ['head: 3.5 mm', 'body: 2.5 mm', 'tail: 1.5 mm'],
+  },
+  {
+    title: 'Portal vein',
+    data: ['<13 mm diameter'],
+  },
+  {
+    title: 'Prevertebral soft tissue thickness (lateral c-spine x-ray)',
+    data: [
+      'Prevertebral soft tissue thickness (lateral c-spine x-ray)',
+      '2 cm at C7',
+      'easiest way to remember is "7 at 2 and 2 at 7"',
+    ],
+  },
+  {
+    title: 'Prostate volume',
+    data: ['<25-30 mL'],
+  },
+  {
+    title: 'Pulmonary artery descending branch of right pulmonary artery',
+    data: [
+      '<16 mm (males)',
+      '<15 mm (females)',
+      'main pulmonary artery: <29 mm',
+    ],
+  },
+  {
+    title: 'Rectum',
+    data: ['wall thickness <5 mm'],
+  },
+  {
+    title: 'Scapholunate angle',
+    data: ['30-60o'],
+  },
+  {
+    title: 'Small bowel',
+    data: ['lumen: <3 cm', 'wall: <3 mm'],
+  },
+  {
+    title: 'Spleen',
+    data: ['<12 cm'],
+  },
+  {
+    title: 'Trachea chest x-ray',
+    data: ['<25 mm (males)', '<21 mm (females)'],
+  },
+  {
+    title: 'Ureter',
+    data: ['30-34 cm long', '2-8 mm diameter'],
+  },
+  {
+    title: 'Uterus prepubescent',
+    data: [
+      'length ≤3 cm',
+      'diameter ~1 cm',
+      'nulliparous: length ≤8 cm, diameter ~8 cm',
+      'multiparous: length ≤9.5 cm, diameter ~5.5 cm',
+      'postmenopausal: length ≤6 cm, diameter ~2 cm',
+    ],
   },
 ];
 
@@ -162,7 +228,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   header: {
-    fontSize: 32,
+    fontSize: 25,
     backgroundColor: '#fff',
     borderRadius: 20,
     paddingLeft: 20,
