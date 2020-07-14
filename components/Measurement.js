@@ -10,6 +10,10 @@ import {
   Button,
   ToastAndroid,
 } from 'react-native';
+
+import {useNavigation, NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
 import firebase from '../database/firebase';
 
 const DATA = [
@@ -192,6 +196,17 @@ const Item = ({title}) => (
   </View>
 );
 
+function GoToButton({screenName}) {
+  const navigation = useNavigation();
+
+  return (
+    <Button
+      title={`Go to ${screenName}`}
+      onPress={() => navigation.navigate(screenName)}
+    />
+  );
+}
+
 const Measurement = () => {
   const showToast = () => {
     firebase.auth().signOut();
@@ -200,7 +215,7 @@ const Measurement = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Button title="Logout" onPress={() => showToast()} />
+        <GoToButton screenName="Logout" />
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}

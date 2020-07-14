@@ -9,7 +9,7 @@ import firebase from './database/firebase';
 
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Dashboard from './components/Dashboard';
+import Logout from './components/Logout';
 import Measurement from './components/Measurement';
 import Test from './components/Test';
 
@@ -40,9 +40,9 @@ function MyStack() {
         options={({title: 'Login'}, {headerLeft: null})}
       />
       <Stack.Screen
-        name="Dashboard"
-        component={Dashboard}
-        options={({title: 'Dashboard'}, {headerLeft: null})}
+        name="Logout"
+        component={Logout}
+        options={({title: 'Logout'}, {headerLeft: null})}
       />
       <Stack.Screen
         name="Measurement"

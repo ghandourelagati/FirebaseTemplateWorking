@@ -31,7 +31,7 @@ export default class Login extends Component {
 
   userLogin = () => {
     if (this.state.email === '' && this.state.password === '') {
-      Alert.alert('Enter details to signin!');
+      Alert.alert('Enter details to login!');
     } else {
       this.setState({
         isLoading: true,
@@ -47,7 +47,7 @@ export default class Login extends Component {
             email: '',
             password: '',
           });
-          this.props.navigation.navigate('Dashboard');
+          this.props.navigation.navigate('Logout');
         })
         .catch((error) => this.setState({errorMessage: error.message}));
     }
@@ -79,7 +79,7 @@ export default class Login extends Component {
         />
         <Button
           color="#3740FE"
-          title="Signin"
+          title="Login"
           onPress={() => this.userLogin()}
         />
 
