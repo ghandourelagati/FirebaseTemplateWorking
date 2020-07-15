@@ -138,6 +138,7 @@ const DATA = [
     title: 'Prevertebral soft tissue thickness (lateral c-spine x-ray)',
     data: [
       'Prevertebral soft tissue thickness (lateral c-spine x-ray)',
+      '7 mm at C2',
       '2 cm at C7',
       'easiest way to remember is "7 at 2 and 2 at 7"',
     ],
@@ -179,10 +180,9 @@ const DATA = [
     data: ['30-34 cm long', '2-8 mm diameter'],
   },
   {
-    title: 'Uterus prepubescent',
+    title: 'Uterus',
     data: [
-      'length ≤3 cm',
-      'diameter ~1 cm',
+      'prepubescent: length ≤3 cm, diameter ~1 cm',
       'nulliparous: length ≤8 cm, diameter ~8 cm',
       'multiparous: length ≤9.5 cm, diameter ~5.5 cm',
       'postmenopausal: length ≤6 cm, diameter ~2 cm',
@@ -208,10 +208,6 @@ function GoToButton({screenName}) {
 }
 
 const Measurement = () => {
-  const showToast = () => {
-    firebase.auth().signOut();
-    ToastAndroid.show('You have been signedout !', ToastAndroid.SHORT);
-  };
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -237,7 +233,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f4',
   },
   item: {
-    backgroundColor: '#aaaaaa',
+    backgroundColor: '#2c85ff',
     padding: 20,
     marginVertical: 8,
     borderRadius: 20,

@@ -43,7 +43,9 @@ export default class Signup extends Component {
   };
 
   registerUser = () => {
-    if (this.state.email === '' && this.state.password === '') {
+    let myEmail = this.state.email;
+    let myPassword = this.state.password;
+    if (myEmail.length < 4 || myPassword.length < 4) {
       Alert.alert('Enter details to signup!');
     } else {
       this.setState({

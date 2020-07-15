@@ -30,7 +30,9 @@ export default class Login extends Component {
   };
 
   userLogin = () => {
-    if (this.state.email === '' && this.state.password === '') {
+    let myEmail = this.state.email;
+    let myPassword = this.state.password;
+    if (myEmail.length < 4 || myPassword.length < 4) {
       Alert.alert('Enter details to login!');
     } else {
       this.setState({
